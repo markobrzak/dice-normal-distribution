@@ -19,11 +19,26 @@ for throw in range(number_of_throws):
 
     data_average.append(temp_average)
 
+data_average.sort()
+
+
 # set contains only unique values
 unique_data = list(Counter(data_average).keys())
 
 unique_count = list(Counter(data_average).values())
 
+num_of_elements = len(unique_count)
+
+data = []
+
+# merge lists into one
+for i in range(num_of_elements):
+    data.append([])
+    data[i].append(unique_data[i])
+    data[i].append(unique_count[i])
+
 print(unique_data)
 
 print(unique_count)
+
+print(data)

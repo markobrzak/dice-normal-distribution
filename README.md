@@ -1,1 +1,1 @@
-# dice-normal-distribution
+# dice-rolls-distribution

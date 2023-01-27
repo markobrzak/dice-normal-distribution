@@ -1,9 +1,12 @@
 from collections import Counter
 import random
+import matplotlib.pyplot as plt
 
-number_of_dices = 3
+# settings
+number_of_dices = 2
 number_of_throws = 10000
 
+# will contain dices throws' average values
 data_average = []
 
 temp = []
@@ -19,26 +22,17 @@ for throw in range(number_of_throws):
 
     data_average.append(temp_average)
 
-data_average.sort()
-
-
-# set contains only unique values
+# average dice throws' unique values (e.g. 1, 1.3, 1.6 etc.)
 unique_data = list(Counter(data_average).keys())
 
+# count of every unique value
 unique_count = list(Counter(data_average).values())
 
-num_of_elements = len(unique_count)
+# ----- graph part -----
+fig = plt.figure(figsize = (10, 5))
 
-data = []
+plt.bar(unique_data, unique_count, color='maroon', width=0.1)
 
-# merge lists into one
-for i in range(num_of_elements):
-    data.append([])
-    data[i].append(unique_data[i])
-    data[i].append(unique_count[i])
-
-print(unique_data)
-
-print(unique_count)
-
-print(data)
+plt.xlabel("Average dice throw value")
+plt.title("Dice Normal Distribution")
+plt.show()

@@ -3,8 +3,8 @@ import random
 import matplotlib.pyplot as plt
 
 # settings
-number_of_dices = 2
-number_of_throws = 10000
+number_of_dices = 8
+number_of_throws = 100000
 
 # will contain dices throws' average values
 data_average = []
@@ -34,5 +34,5 @@ fig = plt.figure(figsize = (10, 5))
 plt.bar(unique_data, unique_count, color='maroon', width=0.1)
 
 plt.xlabel("Average dice throw value")
-plt.title("Dice Normal Distribution")
+plt.title("Dice Roll Distribution")
 plt.show()
